@@ -8,6 +8,7 @@
 
 
 
+
 livereload = require('livereload');
 server = livereload.createServer();
 server.watch(__dirname + "/www");
@@ -17,14 +18,14 @@ server.watch(__dirname + "/www");
 var MongoClient = require('mongodb').MongoClient;
 var ObjectID = require('mongodb').ObjectID;
 var format = require('util').format;
-
+var cool = require('cool-ascii-faces');
 var item = null;
 /* ======================================= */
 
-var port = 4000;
+
 var express = require('express');
 var app = express();
-
+app.set('port', (process.env.PORT || 5000))
 app.use(express.static('./www/'));
 
 app.get('/addItem',function(request,response)
@@ -95,6 +96,7 @@ app.get('/removeItem/:box_id',function(request,response)
 MongoClient.connect('mongodb://Naragorn:824687893@kahana.mongohq.com:10071/Naragorn_Work', function(err, db) {
   if(err) throw err;
   item = db.collection('box');
-  app.listen(port);
-  console.log("\nhttp://127.0.0.1:"+port+"\n");
+  app.listen(app.get('port'), function() {
+  console.log("Node app is running at localhost:" + app.get('port'))
+})
 });
