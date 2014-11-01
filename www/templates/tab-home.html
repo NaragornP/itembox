@@ -1,0 +1,51 @@
+<script src="./js/controllers.js"></script>
+  <script src="./js/service.js"></script>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+<ion-view title="Home">
+
+
+  <ion-content class="padding">
+
+
+    <div class="bar bar-header item-input-inset">
+  <label class="item-input-wrapper">
+    <i class="icon ion-ios7-search placeholder-icon"></i>
+    <input type="search" placeholder="Search">
+  </label>
+  <button class="button button-clear">Cancel</button>
+</div>
+<br>
+
+
+ <table class="table table-hover" border="0">
+
+<!-- ng-repeat="item in items" -->
+<tr ng-repeat="item in items">
+  <td>
+    <div class="list"  >
+    <a class="item item-avatar" href="#">
+      <img src="./img/ionic.png">
+      <!-- <input type="text" style="border: none" ng-model="item.name" > -->
+      <h2>{{item.name}}</h2>
+      <p >Box : {{item.boxname}}</p>
+    </a>
+  </div>
+  </td>
+  <td class="col-sm-1" align="center">
+            <button type="button" class="btn btn-primary" ng-click="edit(item)">Save</button>
+          </td>
+          <td class="col-sm-1" align="center">
+            <button type="button" class="btn btn-danger" ng-click="delete(item._id)"><i class="fa fa-trash-o"></i></button>
+          </td>
+</tr>
+
+
+</table>
+
+  </ion-content>
+</ion-view>

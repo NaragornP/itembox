@@ -1,0 +1,36 @@
+ <script src="./js/controllers.js"></script>
+  <script src="./js/service.js"></script>
+
+<ion-view title="Add Item">
+  <ion-content>
+    <ion-list>
+
+<!-- 
+      <ion-item ng-repeat="friend in friends" type="item-text-wrap" href="#/tab/friend/{{friend.id}}">
+        {{friend.name}} -->
+
+
+
+        <div class="list list-inset">
+  <center ><img src="./img/camera.png" ></center>     
+  <br> 	
+  <label class="item item-input">
+    <input type="text" placeholder="Item Name" ng-model="inputItem">
+  </label>
+  <br>
+  <label class="item item-input">
+    <input type="text" placeholder="In Box Name" ng-model="inputBox">
+  </label>
+  <br>
+  <center>	
+    <button type="submit" class="btn btn-success" ng-click="addItem(inputItem, inputBox)" onClick="window.location.reload()";>SAVE</button>
+
+  
+</button>
+</center>
+</div>
+
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
